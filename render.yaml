@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: telegram-bot
+    env: node
+    runtime:
+      version: '14'
+    startCommand: npm start
