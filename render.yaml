@@ -4,4 +4,4 @@ services:
     env: node
     runtime:
       version: '14'
-    startCommand: npm start
+    startCommand: python3 bot.py
