@@ -1,11 +1,16 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler
 import requests
-
+from flask import Flask
 logging.basicConfig(level=logging.INFO)
+app = Flask(__name__)
 
 TOKEN = 'YOUR_BOT_TOKEN'
 
+@app.route('/')
+def hello_world():
+    return 'Hello from Tech VJ'
+    
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text='Hello! I can upload URLs to Render or Koyeb instances.')
 
@@ -32,4 +37,4 @@ def main():
     updater.idle()
 
 if __name__ == '__main__':
-    main()
+    app.run()
