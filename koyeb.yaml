@@ -1,0 +1,4 @@
+app:
+  name: telegram-bot
+  type: web
+  start_command: python app.py
